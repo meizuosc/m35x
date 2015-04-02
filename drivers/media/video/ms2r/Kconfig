@@ -1,0 +1,5 @@
+config VIDEO_MS2R
+	tristate "Fujitsu MS2R MIPI CSI-2 supporting camera driver"
+	depends on I2C && VIDEO_V4L2 && MACH_M6X
+	---help---
+	  This driver supports Fujitsu MS2R ISP with sony IMX132 and IMX179 sensor

@@ -1,0 +1,67 @@
+config AUTOTEST
+	bool "Enable kernel built-in autotest framework"
+	default n
+	help
+	  This enable the entry to do some autotest for kernel, such as dump
+	  the kernel log and so forth.
+
+config AUTOTEST_SUSPEND
+	bool "Run suspend test"
+	default n
+	select AUTOTEST
+	depends on PM_TEST_SUSPEND
+	help
+	  Enable this option to test the system suspend.
+
+	  If unsure, say N.
+
+config AUTOTEST_SUSPEND_CYCLE
+	int "Configure the suspend test cycle(in seconds)"
+	range 1 3600
+	depends on AUTOTEST_SUSPEND
+	default 60
+	help
+	  Configure the suspend test cycle.
+
+	  If unsure, keep default.
+
+config AUTOTEST_SUSPEND_TIME
+	int "Configure the auto suspend time(in seconds)"
+	range 2 3600
+	depends on AUTOTEST_SUSPEND
+	default 10
+	help
+	  Configure the suspend time of suspend test.
+
+	  If unsure, keep default.
+
+config WAKEALARM_RTC
+	string "RTC used to wakeup the suspended system"
+	depends on AUTOTEST_SUSPEND
+	default "rtc0"
+	help
+	  The RTC device that will be used to wake up the suspended
+	  system.
+
+config EXPORT_KIMAGE_PARTITION
+	bool "Export the kernel image partition to user space"
+	default n
+	depends on AUTOTEST
+	help
+          This export the kernel image partition to user-space and allows
+	  to flash it with a simple dd command.
+
+          It is required by autotest for android.
+
+	  If unsue, say NO.
+
+config EXPORT_SERIALNO_INTERFACE
+	bool "Export the /proc/serial_no interface to user-space"
+	default n
+	depends on AUTOTEST
+	help
+	  This allows to read/write the serial number of the USB port.
+
+          It is required by autotest for android.
+
+	  If unsue, say NO.

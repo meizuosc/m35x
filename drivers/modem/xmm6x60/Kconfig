@@ -1,0 +1,31 @@
+config MEIZU_MODEM_WD
+	bool "Meizu WCDMA Mobile Modem Interface"
+	depends on MEIZU_MODEM
+	default n
+	---help---
+	  MEIZU Modem Interface Driver.
+
+config UMTS_MODEM_XMM6160
+	bool "modem chip : IFX XMM6160"
+	depends on MEIZU_MODEM_WD
+	default n
+
+config UMTS_MODEM_XMM6260
+	bool "modem chip : IFX XMM6260"
+	depends on MEIZU_MODEM_WD
+	default y
+
+config UMTS_MODEM_XMM6262
+	bool "modem chip : IFX XMM6262"
+	depends on MEIZU_MODEM_WD
+	default n
+
+config LINK_DEVICE_HSIC
+	bool "modem driver link device HSIC"
+	depends on MEIZU_MODEM_WD
+	default y
+
+#config SIM_DETECT
+	#bool "SIM_DETECT pin"
+	#depends on MEIZU_MODEM_WD
+	#default n

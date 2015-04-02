@@ -1,0 +1,1 @@
+obj-$(CONFIG_AUDIENCE_ES305B)		+= es305b.o

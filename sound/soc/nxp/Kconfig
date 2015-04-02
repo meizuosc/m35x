@@ -1,0 +1,6 @@
+config PA_TFA9887
+	tristate "TFA9887 PA Voice Processor Driver"
+	depends on (MACH_M6X)
+	default y
+	help
+	  Enable PA TFA9887 config for m6x

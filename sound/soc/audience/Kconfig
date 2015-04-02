@@ -1,0 +1,5 @@
+config AUDIENCE_ES305B
+	tristate "ES305B Voice Processor Driver"
+	default y
+	help
+	  Say Y here to enable es305b Voice Processor  support.

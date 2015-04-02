@@ -1,0 +1,14 @@
+config MEIZU_MODEM_TD
+	bool "Meizu TD Mobile Modem Interface"
+	depends on MEIZU_MODEM
+	default n
+
+config MODEM_SC8803G
+	bool "TD SC8803G modem chip support"
+	depends on MEIZU_MODEM_TD
+	default n
+
+config MODEM_SC8803G_CONTROL
+	bool "TD SC8803G modem control interface"
+	depends on MEIZU_MODEM_TD
+	default n

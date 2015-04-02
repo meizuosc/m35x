@@ -1,0 +1,8 @@
+menuconfig MEIZU_MODEM
+	bool "Meizu Mobile Modem Interface"
+	default n
+	---help---
+	  Meizu Modem Interface Driver.
+
+source "drivers/modem/xmm6x60/Kconfig"
+source "drivers/modem/sc880xg/Kconfig"
